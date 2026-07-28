@@ -1,0 +1,46 @@
+# 整体布局色彩 (锁定浅色模式以凸显海洋风的清爽)
+display_mode: light
+
+# 网站全局主题色配置 (海洋蓝/天空蓝渐变体系)
+theme_color:
+  enable: true
+  main: "#1E90FF"           # 核心主色调：闪避蓝 (DodgerBlue)，用于主要按钮与核心边框
+  paginator: "#00BFFF"      # 翻页与悬浮色：深天空蓝 (DeepSkyBlue)，比主色略亮，增加层次
+  button_hover: "#0073E6"   # 按钮悬浮反馈色：较深的海洋蓝，提供清晰的点击暗示
+  text_selection: "#00BFFF" # 鼠标选中文字时的背景色
+  link_color: "#1E90FF"     # 正文内超链接的默认颜色
+  hr_color: "#87CEFA"       # 分割线颜色：淡蓝色 (LightSkyBlue)，避免视觉生硬
+
+# 网站全局背景设置
+# 直接填写相对路径，不要加 url()
+background: /images/001.jpg
+
+# 首页顶部图 (设置为 false 彻底关闭占位，让页面更加紧凑极简)
+index_img: false
+
+# 顶部导航栏设置
+nav:
+  enable: true
+  # 开启向下滚动时的悬浮固定效果
+  fixed: true
+  # 开启全局透明效果，滚动时将自动调用底层的 CSS 毛玻璃滤镜 (backdrop-filter)
+  transparent: true
+
+# 全站无刷新加载 (PJAX)
+pjax:
+  enable: true
+  exclude:
+    # 暂无需要排除的特殊页面，保持为空或默认即可
+    
+# 页面初次加载动画配置
+preloader:
+  enable: true
+  # source 设置为 1 代表启用自定义加载样式
+  source: 1
+  # 临时挂载一张开源的蓝色水波纹/二次元风格动态 GIF 作为演示
+  # 后续你可以随时将此 URL 替换为你自己喜欢的海洋风 GIF 图片直链
+  pace_css_url: 'https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row@2.0.0/loading/loading.gif'
+  
+local_search:
+  enable: true
+  preload: false

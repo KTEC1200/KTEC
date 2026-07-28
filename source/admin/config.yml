@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: 替换为你的GitHub用户名/仓库名 # 例如：dewsweet/blog (待上云后修改)
+  branch: main # 你的默认分支名称
+
+media_folder: "source/images" # 图片上传后保存的本地路径
+public_folder: "/images"      # 对应文章中引用的绝对路径
+
+collections:
+  - name: "post"
+    label: "文章发布"
+    folder: "source/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # 这里定义了你在后台编辑时能看到的输入框
+      - {label: "文章标题", name: "title", widget: "string"}
+      - {label: "发布时间", name: "date", widget: "datetime"}
+      - {label: "正文内容", name: "body", widget: "markdown"}
