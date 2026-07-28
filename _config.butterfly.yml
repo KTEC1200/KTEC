@@ -44,3 +44,7 @@ preloader:
 local_search:
   enable: true
   preload: false
+  
+inject:
+  head:
+    - '<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>'
