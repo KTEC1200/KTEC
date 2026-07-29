@@ -36,9 +36,22 @@ local_search:
   enable: true
   preload: false
   
+# Inject
+# 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - '<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>'
+    # 1. 引入毛玻璃效果
+    - <link rel="stylesheet" href="/css/transparent.css">
+    # 2. 引入自定义字体
+    - <link rel="stylesheet" href="/css/font.css">
+    # 3. 引入页脚动态渐变
+    - <link rel="stylesheet" href="/css/footer.css">
+    # 如果你之前的 custom.css 还在，可以保留或合并，看个人习惯
+    # - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+    - <script src="/js/welcome.js"></script>
+    # 可以引入多个 JS 文件
+    # - <script src="/js/another.js"></script>
     
 menu:
   首页: / || fas fa-home

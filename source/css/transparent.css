@@ -1,0 +1,14 @@
+/* 让主要卡片背景变得半透明，实现毛玻璃质感 */
+#aside_content .card-widget,
+#recent-posts>.recent-post-item,
+.layout_page>div:first-child:not(.recent-posts),
+.layout_post>#page,
+.layout_post>#post,
+.read-mode .layout_post>#post {
+  background: rgba(255, 255, 255, 0.8); /* 调整为喜欢的透明度 */
+}
+
+/* 侧边栏卡片 */
+#aside-content>.card-widget {
+  background: rgba(255, 255, 255, 0.8);
+}

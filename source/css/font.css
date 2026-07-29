@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'huakang'; /* 自定义字体名称 */
+  font-display: swap;
+  src: url('../font/huakang.ttf') format("truetype");
+}
+
+body {
+  font-family: 'huakang', sans-serif; /* 应用到全局 */
+}
