@@ -51,9 +51,15 @@ aside:
   enable: true
   position: right 
   card_author:
-    enable: true # 作者信息卡
+    enable: true                # 是否开启作者卡片
+    description: 无法选中        # 个人简介
+    button:                     # 卡片底部的按钮
+      icon: fas fa-home         # 按钮图标
+      text: Myself              # 按钮文字
+      link: https://github.com/KTEC1200    
   card_announcement:
     enable: true # 公告
+    content: 📢 欢迎您来～
   card_recent_posts:
     enable: true # 最新文章
   card_categories:
@@ -67,11 +73,6 @@ aside:
     
 avatar:
   img: /images/002.jpg
-  
-# 正确的公告配置
-card_announcement:
-  enable: true             # 必须开启
-  content: 📢 欢迎您来～   # 内容随便写
   
 # 正确的 footer 配置
 footer:
