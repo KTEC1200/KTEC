@@ -30,7 +30,8 @@ pjax:
   enable: true
   exclude:
     # 暂无需要排除的特殊页面，保持为空或默认即可
-  
+
+# 本地搜索  
 local_search:
   enable: true
   preload: false
@@ -45,3 +46,35 @@ menu:
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   关于: /about/ || fas fa-heart
+  
+aside:
+  card_author:
+    enable: true # 作者信息卡
+  card_announcement:
+    enable: true # 公告
+  card_recent_posts:
+    enable: true # 最新文章
+  card_categories:
+    enable: true # 分类
+  card_tags:
+    enable: true # 标签
+  card_archives:
+    enable: true # 归档
+  card_webinfo:
+    enable: true # 网站信息
+    
+avatar:
+  img: /images/002.jpg
+  
+card_announcement:
+  enable: true
+  content: 我回来了！
+  
+footer:
+  # 是否显示主题信息（Theme Butterfly）
+  theme:
+    enable: false
+  # 是否显示框架信息（Hexo）
+  framework:
+    enable: false
+  since: 2024 # 改成你的起始年份
