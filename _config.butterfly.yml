@@ -48,6 +48,8 @@ menu:
   关于: /about/ || fas fa-heart
   
 aside:
+  enable: true
+  position: right 
   card_author:
     enable: true # 作者信息卡
   card_announcement:
@@ -66,15 +68,19 @@ aside:
 avatar:
   img: /images/002.jpg
   
+# 正确的公告配置
 card_announcement:
-  enable: true
-  content: 我回来了！
+  enable: true             # 必须开启
+  content: 📢 欢迎您来～   # 内容随便写
   
+# 正确的 footer 配置
 footer:
-  # 是否显示主题信息（Theme Butterfly）
+  owner:
+    enable: true
+    since: 2024
+  copyright: true
+  custom_text: 
   theme:
-    enable: false
-  # 是否显示框架信息（Hexo）
+    enable: false          # 注意：这是两个空格缩进
   framework:
-    enable: false
-  since: 2024 # 改成你的起始年份
+    enable: false          # 同样两个空格
