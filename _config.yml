@@ -16,7 +16,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 # 网站最终的访问地址（最后全弄好了之后再改）
-url: http://example.com
+url: https://ktec0230.netlify.app/
 # 文章的永久链接格式
 permalink: :year/:month/:title/
 permalink_defaults:

@@ -12,10 +12,13 @@ theme_color:
   hr_color: "#87CEFA"       # 分割线颜色：淡蓝色 (LightSkyBlue)，避免视觉生硬
 
 # 网站全局背景设置，直接填写相对路径，不要加 url()！！！
-background: /images/001.jpg
+background: /images/background.jpg
 
 # 首页顶部图 (设置为 false 彻底关闭占位，让页面更加紧凑极简)
 index_img: false
+
+# 网站图标
+favicon: /images/favicon.png
 
 # 顶部导航栏设置
 nav:
@@ -45,8 +48,8 @@ inject:
     - <link rel="stylesheet" href="/css/font.css">
     # 3. 引入页脚动态渐变
     - <link rel="stylesheet" href="/css/footer.css">
-    # 如果你之前的 custom.css 还在，可以保留或合并，看个人习惯
-    # - <link rel="stylesheet" href="/css/custom.css">
+    
+    - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     - <script src="/js/welcome.js"></script>
     # 可以引入多个 JS 文件
@@ -86,7 +89,7 @@ aside:
     
 # 侧边栏个人头像
 avatar:
-  img: /images/002.jpg
+  img: /images/avatar.jpg
   
 # 网站底部配置
 footer:
@@ -99,3 +102,14 @@ footer:
     enable: false        
   framework:
     enable: false     
+    
+# 评论
+comments:
+  use:
+    - Twikoo
+    
+twikoo:
+  envId: https://express-js-on-vercel-eight-pied-63.vercel.app/ # 替换为你的真实部署地址
+  region: 
+  visitor: true
+  option:

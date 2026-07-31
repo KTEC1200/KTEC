@@ -1,0 +1,12 @@
+/* 针对文章页面的顶部区域 */
+#page-header.post-bg {
+    height: 250px !important;
+    /* 修改数值以调整高度，默认通常是 400px，数值越小越紧凑 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    /* 这里替换为你喜欢的渐变色代码 */
+}
+
+/* 调整内部文字标题的垂直居中位置以适应变矮的头部 */
+#page-header.post-bg #post-info {
+    bottom: 30px !important;
+}
