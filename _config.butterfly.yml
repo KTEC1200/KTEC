@@ -39,12 +39,6 @@ local_search:
   enable: true
   preload: false
   
-# 浏览量
-busuanzi:
-  site_uv: true
-  site_pv: true
-  page_pv: false # 必须关闭此项，让出文章浏览量的渲染权
-  
 # 引入 css 和 js 效果
 inject:
   head:
@@ -111,11 +105,11 @@ footer:
     
 # 评论
 comments:
-  use:
-    - Twikoo
-    
-twikoo:
-  envId: https://express-js-on-vercel-eight-pied-63.vercel.app/
-  region: 
-  visitor: true
-  option:
+  use: Waline
+  # ...
+  Waline:
+    serverURL: https://waline63.netlify.app/api  # 注意这里改成了 /api
+    placeholder: "输入昵称和邮箱即可评论~"
+    # 强制要求填昵称和邮箱
+    option:
+      requiredMeta: ['nick', 'mail']

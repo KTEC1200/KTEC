@@ -15,20 +15,13 @@
 
 /* 2. 针对文章页面的顶部区域应用该动画 */
 #page-header.post-bg {
-    /* 替换为你提供的四色渐变，并强制生效 */
-    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab) !important;
-
-    /* 放大背景尺寸以配合动画滚动 */
-    background-size: 400% 400% !important;
-
-    /* 调用 Gradient 动画，10秒循环一次，平滑过渡，无限循环 */
-    animation: Gradient 10s ease infinite !important;
-
-    /* 维持上一轮的高度的紧凑化设计 */
-    height: 250px !important;
+    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: Gradient 10s ease infinite;
+    height: 250px;
 }
 
 /* 3. 调整内部文字标题的垂直居中位置以适应变矮的头部 */
 #page-header.post-bg #post-info {
-    bottom: 30px !important;
+    bottom: 30px;
 }
