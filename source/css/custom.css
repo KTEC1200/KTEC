@@ -1,12 +1,34 @@
-/* 针对文章页面的顶部区域 */
-#page-header.post-bg {
-    height: 250px !important;
-    /* 修改数值以调整高度，默认通常是 400px，数值越小越紧凑 */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    /* 这里替换为你喜欢的渐变色代码 */
+/* 1. 定义动态渐变的动画关键帧 (保持你的原代码不变) */
+@keyframes Gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
 }
 
-/* 调整内部文字标题的垂直居中位置以适应变矮的头部 */
+/* 2. 针对文章页面的顶部区域应用该动画 */
+#page-header.post-bg {
+    /* 替换为你提供的四色渐变，并强制生效 */
+    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab) !important;
+
+    /* 放大背景尺寸以配合动画滚动 */
+    background-size: 400% 400% !important;
+
+    /* 调用 Gradient 动画，10秒循环一次，平滑过渡，无限循环 */
+    animation: Gradient 10s ease infinite !important;
+
+    /* 维持上一轮的高度的紧凑化设计 */
+    height: 250px !important;
+}
+
+/* 3. 调整内部文字标题的垂直居中位置以适应变矮的头部 */
 #page-header.post-bg #post-info {
     bottom: 30px !important;
 }
