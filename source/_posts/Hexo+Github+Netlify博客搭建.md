@@ -30,6 +30,13 @@
 "28": 建
 title: Hexo+Github+Netlify博客搭建
 date: 2026-07-31T17:10:00.000+08:00
+categories: 
+  - 教程
+  - 网站
+tags: 
+  - Hexo
+  - html
+  - css
 ---
 
 ### 环境安装
