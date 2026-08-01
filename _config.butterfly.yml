@@ -105,11 +105,22 @@ footer:
     
 # 评论
 comments:
-  use: Waline
-  # ...
-  Waline:
-    serverURL: https://waline63.netlify.app/api  # 注意这里改成了 /api
-    placeholder: "输入昵称和邮箱即可评论~"
-    # 强制要求填昵称和邮箱
-    option:
-      requiredMeta: ['nick', 'mail']
+  use:
+    - Gitalk
+  text: true 
+  lazyload: true
+  count: true 
+  card_post_count: false
+
+gitalk:
+  client_id: Ov23liIaOI0ipycscsqu 
+  client_secret: a8ad6ff8886b1f11635bdac06e042f9b7da15f5a
+  repo: comments
+  owner: KTEC1200
+  admin: ['KTEC1200']
+  language: zh-CN
+  perPage: 10 # Pagination size, with maximum 100.
+  distractionFreeMode: false # Facebook-like distraction free mode.
+  pagerDirection: last # Comment sorting direction, available values are last and first.
+  createIssueManually: false 
+  option:
