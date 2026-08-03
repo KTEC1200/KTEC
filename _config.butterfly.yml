@@ -97,7 +97,7 @@ footer:
     enable: true
     since: 2024
   copyright: true
-  custom_text: 
+  custom_text: <a href="https://icp.gov.moe/?keyword=20266363" target="_blank">萌ICP备20266363号</a>
   theme:
     enable: false        
   framework:
