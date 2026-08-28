@@ -1,0 +1,5 @@
+/* 鼠标悬停时消息框变为珊瑚粉 */
+.gt-comment-content:hover {
+    background-color: #ff7f50 !important; /* 珊瑚粉，你也可以换成 #ff6b81 */
+    transition: background-color 0.3s ease; /* 平滑过渡 */
+}

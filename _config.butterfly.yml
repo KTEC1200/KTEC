@@ -1,18 +1,27 @@
 # 整体布局色彩 light浅色、dark深色、auto自动
 display_mode: light
 
+# 深色模式：启用原生暗色 CSS（供 [data-theme='dark'] 生效），切换由 theme-toggle.js 负责
+darkmode:
+  enable: true
+  button: false
+  autoChangeMode: false
+
 # 网站全局主题色配置
 theme_color:
   enable: true
-  main: "#1E90FF"           # 核心主色调：闪避蓝 (DodgerBlue)，用于主要按钮与核心边框
-  paginator: "#00BFFF"      # 翻页与悬浮色：深天空蓝 (DeepSkyBlue)，比主色略亮，增加层次
-  button_hover: "#0073E6"   # 按钮悬浮反馈色：较深的海洋蓝，提供清晰的点击暗示
-  text_selection: "#00BFFF" # 鼠标选中文字时的背景色
-  link_color: "#1E90FF"     # 正文内超链接的默认颜色
-  hr_color: "#87CEFA"       # 分割线颜色：淡蓝色 (LightSkyBlue)，避免视觉生硬
+  main: "#ff5277"           # 核心主色调：珊瑚粉 (Klise)
+  paginator: "#ff5277"      # 翻页与悬浮色：珊瑚粉
+  button_hover: "#e03e63"   # 按钮悬浮反馈色：较深珊瑚粉
+  text_selection: "#ff5277" # 鼠标选中文字时的背景色
+  link_color: "#ff5277"     # 正文内超链接的默认颜色
+  hr_color: "#ffb3c1"       # 分割线颜色：浅粉
 
 # 网站全局背景设置，直接填写相对路径，不要加 url()！！！
 background: /images/background.jpg
+
+# 关闭所有页面顶部大图（去掉横幅，标题落入卡片，同 Klise）
+disable_top_img: true
 
 # 首页顶部图 (设置为 false 彻底关闭占位，让页面更加紧凑极简)
 index_img: false
@@ -42,37 +51,48 @@ local_search:
 # 引入 css 和 js 效果
 inject:
   head:
-    # 1. 引入毛玻璃效果
-    - <link rel="stylesheet" href="/css/transparent.css">
+    # 0. 深色模式防闪烁（首屏即按 localStorage/系统偏好设置 data-theme）
+    - "<script>(function(){try{var m=JSON.parse(localStorage.getItem('theme')||'{\"value\":\"auto\"}').value;var d=m==='dark'||(m==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>"
+    # 1. 引入 Klise 毛玻璃 + 配色
+    - <link rel="stylesheet" href="/css/klise-glass.css">
     # 2. 引入自定义字体
     - <link rel="stylesheet" href="/css/font.css">
-    # 3. 引入页脚动态渐变
-    - <link rel="stylesheet" href="/css/footer.css">
     
-    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/comments.css">
+
   bottom:
-    - <script src="/js/welcome.js"></script>
+    - <script src="/js/theme-toggle.js"></script>
     # 可以引入多个 JS 文件
     # - <script src="/js/another.js"></script>
     
 menu:
   首页: / || fas fa-home
-  归档: /archives/ || fas fa-archive
-  标签: /tags/ || fas fa-tags
+  归档: /archives/ || fas fa-tasks
+  留言板: /messageboard/ || fas fa-envelope
   分类: /categories/ || fas fa-folder-open
-  关于: /about/ || fas fa-heart
+  资源盘: https://ktec0230.dpdns.org/ || fas fa-cloud || _blank
+  友链: /link/ || fas fa-link
+  关于: /about/ || fas fa-paper-plane
   
 # 侧边栏
 aside:
   enable: true
   position: right 
   card_author:
-    enable: true                # 是否开启作者卡片
-    description: 无法选中        # 个人简介
-    button:                     # 卡片底部的按钮
-      icon: fas fa-home         # 按钮图标
-      text: Myself              # 按钮文字
-      link: https://github.com/KTEC1200    
+    enable: true
+    description: 无法选中
+    statistics:
+      enable: true
+      posts:
+        enable: true
+      tags:
+        enable: false
+      categories:
+        enable: true
+    button:
+      icon: fas fa-home
+      text: 我的主页
+      link: https://github.com/KTEC1200 
   card_announcement:
     enable: true # 公告
     content: 📢 欢迎您来～
@@ -81,7 +101,7 @@ aside:
   card_categories:
     enable: true # 分类
   card_tags:
-    enable: true # 标签
+    enable: false
   card_archives:
     enable: true # 归档
   card_webinfo:
@@ -97,7 +117,7 @@ footer:
     enable: true
     since: 2024
   copyright: true
-  custom_text: <a href="https://icp.gov.moe/?keyword=20266363" target="_blank">萌ICP备20266363号</a>
+  custom_text: <a href="https://icp.gov.moe/?keyword=20260603" target="_blank">萌ICP备20266363号</a>
   theme:
     enable: false        
   framework:
@@ -119,8 +139,9 @@ gitalk:
   owner: KTEC1200
   admin: ['KTEC1200']
   language: zh-CN
-  perPage: 10 # Pagination size, with maximum 100.
-  distractionFreeMode: false # Facebook-like distraction free mode.
-  pagerDirection: last # Comment sorting direction, available values are last and first.
+  perPage: 10 
+  distractionFreeMode: false 
+  pagerDirection: last 
   createIssueManually: false 
   option:
+  

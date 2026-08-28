@@ -1,0 +1,15 @@
+- class_name: 友链
+  class_desc: 我，我们
+  link_list:
+    - name: 鲸落
+      link: https://ktec0230.ccwu.cc/
+      avatar: https://ktec0230.ccwu.cc/api/v1/media/7
+      descr: 一鲸落，万物生
+
+#- class_name: 网站
+#  class_desc: 网站推荐
+#  link_list:
+#    - name: GitHub
+#      link: https://github.com/
+#      avatar: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+#      descr: 全球最大的代码托管平台

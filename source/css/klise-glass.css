@@ -1,0 +1,97 @@
+/* ============================================================
+   Klise 珊瑚粉毛玻璃风（注入样式，覆盖 Butterfly 默认）
+   ============================================================ */
+
+/* ---- 1. 配色 & 毛玻璃 token（浅色） ---- */
+:root {
+  /* 覆盖 Butterfly 默认文字色（#4C4948 → 深海军蓝）与弱化色（#858585 → 灰蓝） */
+  --font-color: #0d122b;
+  --text-highlight-color: #0d122b;
+  --card-meta: #6b7886;
+
+  /* Klise 毛玻璃 token */
+  --klise-glass-bg: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.45));
+  --klise-glass-border: rgba(255, 255, 255, 0.25);
+  --klise-glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --klise-glass-radius: 16px;
+  --klise-glass-blur: 10px;
+}
+
+/* ---- 2. 毛玻璃 token（深色） ---- */
+[data-theme='dark'] {
+  /* 深色文字 token（覆盖 :root 的浅色文字值，避免深色下不可读） */
+  --font-color: #c7bebe;
+  --text-highlight-color: #eaeaea;
+  --card-meta: #767f87;
+
+  --klise-glass-bg: linear-gradient(rgba(40, 40, 40, 0.6), rgba(40, 40, 40, 0.5));
+  --klise-glass-border: rgba(255, 255, 255, 0.18);
+  --klise-glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ---- 3. 所有内容卡片 → 悬浮毛玻璃（不碰侧边栏 #aside-content） ---- */
+.layout > div:first-child:not(.nc),
+#recent-posts .recent-post-item {
+  background: var(--klise-glass-bg);
+  backdrop-filter: blur(var(--klise-glass-blur));
+  -webkit-backdrop-filter: blur(var(--klise-glass-blur));
+  border: 1px solid var(--klise-glass-border);
+  box-shadow: var(--klise-glass-shadow);
+  border-radius: var(--klise-glass-radius);
+}
+
+/* 页脚毛玻璃化（与卡片风格一致） */
+#footer {
+  background: var(--klise-glass-bg);
+  backdrop-filter: blur(var(--klise-glass-blur));
+  -webkit-backdrop-filter: blur(var(--klise-glass-blur));
+  border: 1px solid var(--klise-glass-border);
+  box-shadow: var(--klise-glass-shadow);
+  border-radius: var(--klise-glass-radius); /* 可选，或去掉圆角保持方形 */
+  color: var(--font-color);
+}
+
+/* 深色模式下自动适配（变量已定义） */
+
+/* ---- 4. 背景图加蒙版（增强玻璃质感与可读性） ---- */
+#web_bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+[data-theme='dark'] #web_bg::before {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* ---- 5. 链接下划线动画（同 Klise） ---- */
+@media (hover: hover) and (pointer: fine) {
+  #article-container a:not(.headerlink),
+  .recent-post-info a,
+  #footer a {
+    position: relative;
+  }
+
+  #article-container a:not(.headerlink)::after,
+  .recent-post-info a::after,
+  #footer a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #ff5277;
+    transition: width 200ms ease, left 200ms ease;
+    pointer-events: none;
+  }
+
+  #article-container a:not(.headerlink):hover::after,
+  .recent-post-info a:hover::after,
+  #footer a:hover::after {
+    left: 0;
+    width: 100%;
+  }
+}
