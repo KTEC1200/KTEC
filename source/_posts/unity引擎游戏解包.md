@@ -1,6 +1,6 @@
 ---
 title: "unity引擎游戏解包"
-date: 2026-08-015T18:00:00.000+08:00
+date: 2026-08-15T18:00:00.000+08:00
 categories: 
   - 教程
   - 解包
@@ -18,7 +18,9 @@ categories:
 
 3. 打开 AssetStudioGUI.exe，左上角点击 **File/Load folder**，导入 **[游戏名称]_Data**  文件夹，可以勾选 **Enable Advanced Search** 来进行更深入的扫描
 
-4. 加载完成后，所有提取出的资源会按类型显示在左侧的 Asset List 中，可以通过顶部的筛选器 **Filter Type** 按资源类型来快速定位需要的文件
+   > 如果导入时遇到无法解析 Shader 或报错为 `EndOfStreamException` 的问题，原因是 Unity 6000 版本更改了 Shader 的序列化格式，移除了部分旧字段，需要用更高版本的 [AssetStudioNext](https://github.com/Razviar/assetstudio) 来导入
+
+4. 加载完成后，所有提取出的资源会按类型显示在左侧的 Asset List 中，可以通过顶部的筛选器 **Filter Type** 按资源类型来快速定位需要的文件，如果想选择连续的若干文件，先点击选中列表中的第一个文件，然后按住 Shift 键不放，再点击列表中的最后一个文件
 
    |  Type  |  类型  |
    | :-----------: | :--------: |
@@ -36,7 +38,7 @@ categories:
 
    ![image-20260816222502595](../images/image-20260816222502595.png)
 
-7. 筛选完之后，点击 **Export** 选择导出 **All assets（全部）** 、 **Selected assets（选中）** 或者 **Filtered assets（已筛选）**
+5. 筛选完之后，点击 **Export** 选择导出 **All assets（全部）** 、 **Selected assets（选中）** 或者 **Filtered assets（已筛选）**
 
    ![image-20260816223347878](../images/image-20260816223347878.png)
 

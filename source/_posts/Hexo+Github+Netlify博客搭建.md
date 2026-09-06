@@ -49,7 +49,7 @@ categories:
 
 ### 配置网站外观
 
-在 Blog 下，新建一个 _config.butterfly.yml 并打开，我的代码供参考：
+在 Blog 下，新建一个 _config.butterfly.yml 并打开，基础代码供参考：
 
 ```html
 # 整体布局色彩（light浅色、dark深色、auto自动）
@@ -155,7 +155,7 @@ footer:
 
 ### 配置网站信息
 
-在 Blog 下，找到 _config.yml 并打开，我的代码供参考：
+在 Blog 下，找到 _config.yml 并打开，基础代码供参考：
 
 ```html
 # Site
