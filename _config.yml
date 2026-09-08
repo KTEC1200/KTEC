@@ -4,7 +4,7 @@ title: 红尘
 # 网站副标题
 subtitle: ''
 # 网站描述，常用于SEO，会出现在搜索引擎结果中
-description: 'いつかあなたの大切な人と再会できますように'
+description: '解包'
 # 网站关键词
 keywords:
 # 网站作者
@@ -125,5 +125,26 @@ deploy:
 search:
   path: search.xml
   field: post
-  content: true
+  content: false
   format: html
+  
+all_minifier: true
+
+filter_optimize:
+  enable: true
+  css:
+    minify: true
+    excludes:
+      - '@fortawesome/fontawesome-free'
+      - 'fonts.googleapis.com'
+    # 内联关键 CSS，如 main.css，以提升首屏性能
+    inlines:
+      - css/klise-glass.css
+      - css/font.css
+      - css/comments.css
+  js:
+    minify: true
+    excludes:
+      - 'js/**'
+  html:
+    minify: true

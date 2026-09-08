@@ -57,13 +57,12 @@ inject:
     - <link rel="stylesheet" href="/css/klise-glass.css">
     # 2. 引入自定义字体
     - <link rel="stylesheet" href="/css/font.css">
-    
+    # 3. 引入评论
     - <link rel="stylesheet" href="/css/comments.css">
 
   bottom:
     - <script src="/js/theme-toggle.js"></script>
     # 可以引入多个 JS 文件
-    # - <script src="/js/another.js"></script>
     
 menu:
   首页: / || fas fa-home
@@ -91,8 +90,8 @@ aside:
         enable: true
     button:
       icon: fas fa-home
-      text: 我的主页
-      link: https://github.com/KTEC1200 
+      text: 联系我
+      link: https://twitter.com/KTEC120 
   card_announcement:
     enable: true # 公告
     content: 📢 欢迎您来～
@@ -145,3 +144,7 @@ gitalk:
   createIssueManually: false 
   option:
   
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
