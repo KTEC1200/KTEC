@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'huakang'; /* 自定义字体名称 */
+  font-family: 'lily'; /* 自定义字体名称 */
   font-display: block;
-  src: url('../font/huakang.ttf') format("truetype");
+  src: url('../font/lily.TTF') format("truetype");
 }
 
 body {
-  font-family: 'huakang', sans-serif; /* 应用到全局 */
+  font-family: 'lily', sans-serif; /* 应用到全局 */
 }
 
 .post-content {
