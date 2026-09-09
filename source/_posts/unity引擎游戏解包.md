@@ -44,8 +44,11 @@ categories:
 
    > 如果 AssetStudio 无法正常解析文件，说明游戏资源可能经过了加密
    >
-   > - 对于使用 IL2CPP 技术打包的游戏，需要使用 [Il2CppDumper](https://github.com/perfare/il2cppdumper) 来从 GameAssembly.dll 和 global-metadata.dat 文件中还原代码结构。
-   > - 针对特定的加密方式（如异或加密），可能需要编写或寻找专门的解密脚本
+   > 对于使用 IL2CPP 技术打包的游戏（常会有 il2cpp_data 文件夹），需要使用 [Il2CppDumper](https://github.com/perfare/il2cppdumper) 来从 GameAssembly.dll 和 global-metadata.dat 中还原代码结构，步骤如下：
+   >
+   > - 在 Il2CppDumper 文件夹内打开 cmd，命令为 `Il2CppDumper.exe "D:\Game\GameAssembly.dll" "D:\Game\global-metadata.dat" "D:\Output"`，GameAssembly.dll 地址通常在游戏根目录，global-metadata.dat 地址则是在 il2cpp_data 文件夹内
+   > - 输出路径可能在 Il2CppDumper 文件夹内，我也不知道为啥设置了输出路径还能出错，结果一般有 DummyDll 文件夹（目标文件）、dump.cs、il2cpp.h、ida.py/ghidra.py
+   > - 如果报错为 `ERROR: Metadata file supplied is not valid metadata file.`，说明 global-metadata.dat 被加密或混淆
 
 补充：
 

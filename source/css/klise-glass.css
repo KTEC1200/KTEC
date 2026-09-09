@@ -10,7 +10,7 @@
   --card-meta: #6b7886;
 
   /* Klise 毛玻璃 token */
-  --klise-glass-bg: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.45));
+  --klise-glass-bg: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.55));
   --klise-glass-border: rgba(255, 255, 255, 0.25);
   --klise-glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   --klise-glass-radius: 16px;
@@ -24,7 +24,7 @@
   --text-highlight-color: #eaeaea;
   --card-meta: #767f87;
 
-  --klise-glass-bg: linear-gradient(rgba(40, 40, 40, 0.6), rgba(40, 40, 40, 0.5));
+  --klise-glass-bg: linear-gradient(rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.6));
   --klise-glass-border: rgba(255, 255, 255, 0.18);
   --klise-glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
@@ -94,4 +94,29 @@
     left: 0;
     width: 100%;
   }
+}
+
+/* ---- 侧边栏卡片毛玻璃 ---- */
+#aside-content .card-widget {
+  background: var(--klise-glass-bg) !important;
+  backdrop-filter: blur(var(--klise-glass-blur));
+  -webkit-backdrop-filter: blur(var(--klise-glass-blur));
+  border: 1px solid var(--klise-glass-border);
+  box-shadow: var(--klise-glass-shadow);
+  border-radius: var(--klise-glass-radius);
+}
+
+/* 如果个别卡片内部有额外的背景色，统一覆盖 */
+#aside-content .card-widget * {
+  /* 不强制继承背景，但确保内部元素不遮挡毛玻璃 */
+}
+/* 针对卡片标题区域可能带背景色的情况（如 .card-author .author-info） */
+#aside-content .card-widget .author-info,
+#aside-content .card-widget .widget-title {
+  background: transparent !important;
+}
+
+#aside-content .card-widget:hover {
+  box-shadow: 0 8px 40px 0 rgba(31, 38, 135, 0.2);
+  transition: box-shadow 0.3s ease;
 }

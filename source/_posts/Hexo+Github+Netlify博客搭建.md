@@ -105,7 +105,7 @@ collections:
       - {label: "发布时间", name: "date", widget: "datetime"}
       - {label: "正文内容", name: "body", widget: "markdown"}
       
-# 跳过指定文件的渲染。匹配到的文件将会被直接复制到 public 目录
+# 跳过指定文件的渲染，匹配到的文件将会被直接复制到 public 目录
 skip_render: "admin/**"
 ```
 

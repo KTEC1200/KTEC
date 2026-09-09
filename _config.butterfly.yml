@@ -18,7 +18,7 @@ theme_color:
   hr_color: "#ffb3c1"       # 分割线颜色：浅粉
 
 # 网站全局背景设置，直接填写相对路径，不要加 url()！！！
-background: /images/background.jpg
+background: 
 
 # 关闭所有页面顶部大图（去掉横幅，标题落入卡片，同 Klise）
 disable_top_img: true
@@ -62,7 +62,8 @@ inject:
 
   bottom:
     - <script src="/js/theme-toggle.js"></script>
-    # 可以引入多个 JS 文件
+    
+    - <script src="/js/random_web_bg.js"></script>
     
 menu:
   首页: / || fas fa-home
