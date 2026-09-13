@@ -49,7 +49,7 @@ categories:
 
 ### 配置网站外观
 
-在 Blog 下，新建一个 _config.butterfly.yml 并打开，[基础代码文件](https://github.com/KTEC1200/KTEC/blob/main) 供参考
+在 Blog 下，新建一个 _config.butterfly.yml 并打开，[基础代码文件](https://github.com/KTEC1200/KTEC/blob/main) 供参考，看不懂的可以直接发给AI，刚开始不需要照搬，把基础功能搭建好就可以了，其他的什么配置啊自己琢磨去吧
 
 保存后切换回 Git Bash 窗口，输入 `hexo clean && hexo g && hexo s`，窗口底部弹出绿色信息 `Hexo is running at http://localhost:4000/`，在浏览器中访问 http://localhost: 4000/，就会看到刚刚创建的博客
 
@@ -173,7 +173,9 @@ skip_render: "admin/**"
 
 4. 访问 admin：
 
-   在浏览器中访问 `你的公网链接/admin`（如 `https://xxx.netlify.app/admin`），你就能看到一个独立的图形化登录界面，如果没有弹出登录框，或者重新 `git push` 提示 `Recv failure: Connection was reset`，请按以下方法解决：
+   在浏览器中访问 `你的公网链接/admin`（如 `https://xxx.netlify.app/admin`），你就能看到一个独立的图形化登录界面
+
+   如果没有弹出登录框，或者重新 `git push` 提示 `Recv failure: Connection was reset`，请按以下方法解决：
 
    - 在 Git Bash 窗口中执行 `ssh-keygen -t ed25519 -C "你的GitHub邮箱"`，然后 **连续按 3 次回车键**
 
@@ -182,7 +184,7 @@ skip_render: "admin/**"
    - 在 GitHub 网页端，点击右上角头像，选择 **Settings** ，在左侧菜单点击 **SSH and GPG keys**，点击 **New SSH key**，Title 随便填，Key type 保持默认，将刚才复制的密钥直接粘贴到下方的 Key 输入框中，点击 **Add SSH key** 
 
    - 回到 Git Bash 窗口，执行 `git remote set-url origin git@github.com:Github名/仓库名.git`
-
+   
    然后就可以 `git push` 重新推送了
 
 ## 博客书写
